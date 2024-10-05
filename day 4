@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class PseudoSortedArray {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int t = scanner.nextInt();
+
+        while (t-- > 0) {
+            int n = scanner.nextInt();
+            int[] arr = new int[n];
+
+            for (int i = 0; i < n; i++) {
+                arr[i] = scanner.nextInt();
+            }
+
+            boolean isPseudoSorted = isPseudoSorted(arr);
+
+            if (isPseudoSorted) {
+                System.out.println("YES");
+            } else {
+                System.out.println("NO");
+            }
+        }
+    }
+
+    public static boolean isPseudoSorted(int[] arr) {
+        int n = arr.length;
+        int count = 0;
+
+        for (int i = 0; i < n - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
+                count++;
+                if (count > 1) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+}
+
+
