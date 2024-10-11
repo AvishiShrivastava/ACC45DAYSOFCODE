@@ -1,0 +1,52 @@
+import java.util.Scanner;
+class fruitJuice{
+	int product_code;
+	String flavour;
+	String pack_type;
+	int pack_size;
+	int product_price;
+
+	fruitJuice()
+	{
+		product_code=0;
+		pack_size=0;
+		product_price=0;
+		pack_type="";
+		flavour="";
+	}
+	void input()
+	{
+	Scanner obj=new Scanner(System.in);
+	System.out.println("Enter all details");
+	pack_type=obj.nextLine();
+	flavour=obj.nextLine();
+	product_code=obj.nextInt();
+	pack_size=obj.nextInt();
+	product_price=obj.nextInt();
+
+	}
+	void discount()
+	{
+		product_price=product_price-10;
+					
+	}
+	void display()
+	{
+		System.out.println("product code" +product_code);
+		System.out.println("flavour" +flavour);
+		System.out.println("pack type" +pack_type);
+		System.out.println("pack size" +pack_size);
+		System.out.println("product price" +product_price);
+}
+}
+class FruitJuicetest
+{
+	public static void main(String args[])
+	{
+	fruitJuice mm=new fruitJuice();
+	
+	mm.input();
+	mm.discount();
+	mm.display();
+}
+}
